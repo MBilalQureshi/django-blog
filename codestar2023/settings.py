@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-+0=6be^jdwtd^+)q_8k*8el)#i-!0&r+#6wdghjsv06!%3+c_)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['8000-mbilalquresh-djangoblog-9irqsimvfsc.ws-eu105.gitpod.io']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'codestar2023'
 ]
 
 MIDDLEWARE = [

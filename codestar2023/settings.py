@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'django_summernote',
+    'crispy_forms',
     'blog',
 ]
 
@@ -61,6 +62,9 @@ LOGOUT_REDIRECT_URL = '/'
 # To prevent 500 errors during login and registration, you need to make a one line addition to your settings.py file:
 # After this, both login and registration should work without errors regardless of whether you use an email address to sign in/up.
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+# tell crispy to use bootstrap classes for formatting
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

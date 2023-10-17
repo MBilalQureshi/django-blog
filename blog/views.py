@@ -3,6 +3,7 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm
+from django.contrib import messages
 
 # Create your views here.
 # This time we are not going to use function but class
@@ -58,8 +59,11 @@ class PostDetail(View):
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
+            messages.success(self.request, 'Comment added successfully. Awaiting approvel!')
+
         else:
             comment_form = CommentForm()
+            messages.error(request, 'Comment was not added.')
 
         return render(
             request,
@@ -69,7 +73,7 @@ class PostDetail(View):
                 'comments': comments,
                 "commented": True,
                 "liked": liked,
-                "comment_form": CommentForm()
+                "comment_form": CommentForm(),
             },
         )
 

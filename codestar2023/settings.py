@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+from django.contrib.messages import constants as messages
 
 if os.path.isfile("env.py"):
     import env
@@ -65,6 +66,20 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 # tell crispy to use bootstrap classes for formatting
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+'''
+each message has a built-in tag to  indicate the category of the message -
+is it a warning or an error? Is it indicating a  success or is it just giving info to the user?
+We want to assign these tags  to different Bootstrap classes  
+so that the color of our message will  change according to its category.
+'''
+MESSAGE_TAGS = {
+    messages.DEBUG: 'alert-info',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

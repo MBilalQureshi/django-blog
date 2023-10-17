@@ -29,7 +29,16 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+
+'''
+summer note editor would no  longer work when we deploy the project.
+That's because of a security feature known as  Cross-Origin Resource Sharing or CORS for short.
+CORS tells the browser what  resources are permitted to be loaded.
+Without this setting, our browser wouldn't  be able to load the Summernote editor,
+which would render our blog a little useless.
+'''
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = ['blog-fsf-app-76210060d85f.herokuapp.com', '8000-mbilalquresh-djangoblog-9irqsimvfsc.ws-us105.gitpod.io']
 

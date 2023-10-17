@@ -7,5 +7,6 @@ urlpatterns = [
     path('', views.PostList.as_view(), name='home'),
     # first slug is path converter, second slug is keywordname which can be anything
     # https://docs.djangoproject.com/en/3.2/topics/http/urls/#how-django-processes-a-request
-    path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail')
+    path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
+    path('like/<slug:slug>/', views.PostLike.as_view(), name='post_like'),
 ]
